@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Server;
+package mainPackage;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -35,6 +35,7 @@ public class Server {
                 ObjectOutputStream oos = new ObjectOutputStream(s.getOutputStream());
                 System.out.println("Builing a new handler");
                 ClientHandler handler = new ClientHandler(s, ois, oos);
+                clients.add(handler);
                 handler.start();
 
             }
